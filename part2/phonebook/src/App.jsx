@@ -38,15 +38,13 @@ const App = () => {
             setMessage({ context: `The number of ${returnedPerson.name} has been updated successfully`, status: true })
             setTimeout(() => {
               setMessage({ context: null, status: true })
-            }, 3000);
+            }, 3000)
           })
           .catch(error => {
-            console.error('Error updating person:', error);
-            setMessage({ context: `${existingPerson.name} has already been removed from the server`, status: false })
+            setMessage({ context: error.response.data.error, status: false })
             setTimeout(() => {
               setMessage({ context: null, status: true })
-            }, 3000);
-            setPersons(persons.filter(person => person.id !== existingPerson.id))
+            }, 3000)
           })
       }
     } else {
@@ -61,10 +59,13 @@ const App = () => {
           setMessage({ context: `Added ${returnedPerson.name} successfully`, status: true })
           setTimeout(() => {
             setMessage({ context: null, status: true })
-          }, 3000);
+          }, 3000)
         })
         .catch(error => {
-          console.error('Error adding person:', error);
+          setMessage({ context: error.response.data.error, status: false })
+          setTimeout(() => {
+            setMessage({ context: null, status: true })
+          }, 3000)
         })
     }
   }

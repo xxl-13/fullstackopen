@@ -1,0 +1,16 @@
+### Get all blogs 
+GET http://localhost:3001/api/blogs
+
+### Add a new blog 
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY3NmZiMWI3ODExMTUyYTQyZjZjMmFkMCIsImlhdCI6MTczNTQ1NTIyNX0.cwiCHFSjc0yrDSGSIMQ0O1yUODWbtpnYSxYiare2i4Y
+
+{
+    "title": "tokennew",
+    "author": "b",
+    "url": "c",
+    "likes": 1,
+    "userId": "676fb1b7811152a42f6c2ad0"
+}
+
