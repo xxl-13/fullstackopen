@@ -3,7 +3,7 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-    "username": "ad",
+    "username": "root",
     "name": "Superuser",
-    "password": "admin"
+    "password": "root"
 }
